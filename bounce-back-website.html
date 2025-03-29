@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Bounce Back online - a retro-style pixel game by Frank Force where you navigate through colorful levels.">
+    <title>Bounce Back - Retro Pixel Adventure Game | HowToPet.me</title>
+    <link rel="canonical" href="https://howtopet.me">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Game-inspired color palette based on screenshot */
+        :root {
+            --game-purple: #4B0082;
+            --game-green: #32CD32;
+            --game-yellow: #FFD700;
+            --game-pink: #FF1493;
+            --game-bg: #000066;
+            --game-text: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--game-bg);
+            color: var(--game-text);
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: var(--game-pink);
+            margin-bottom: 20px;
+            text-shadow: 4px 4px 0px var(--game-purple);
+            letter-spacing: 3px;
+        }
+
+        .tagline {
+            font-size: 1rem;
+            color: var(--game-yellow);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: var(--game-green);
+            margin: 25px 0 15px 0;
+            text-shadow: 2px 2px 0px #000;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        .game-container {
+            background-color: #000;
+            border: 5px solid var(--game-yellow);
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 20px 0;
+            padding: 0;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .game-frame {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+        }
+
+        .game-info {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 4px solid var(--game-green);
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .controls {
+            background-color: var(--game-purple);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border: 4px solid var(--game-pink);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            border: 4px solid var(--game-green);
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 0.8rem;
+        }
+
+        li:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: var(--game-yellow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+            color: var(--game-yellow);
+            font-size: 0.7rem;
+            border-top: 3px dashed var(--game-pink);
+            padding-top: 20px;
+        }
+
+        .game-credit {
+            font-size: 0.8rem;
+            text-align: center;
+            margin-top: 10px;
+            color: var(--game-yellow);
+        }
+
+        .pixel-btn {
+            background-color: var(--game-purple);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px auto;
+            display: block;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 4px 4px 0 #000;
+            transition: all 0.2s;
+            border: 3px solid var(--game-pink);
+        }
+
+        .pixel-btn:hover {
+            transform: translate(2px, 2px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .tagline {
+                font-size: 0.8rem;
+            }
+
+            .game-frame {
+                height: 500px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.2rem;
+            }
+
+            .game-frame {
+                height: 400px;
+            }
+
+            p, li {
+                font-size: 0.7rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BOUNCE BACK</h1>
+        <p class="tagline">A retro pixel adventure through colorful and challenging levels!</p>
+    </header>
+
+    <main>
+        <section class="game-container">
+            <iframe src="https://binbashbanana.github.io/gfiles/gfiles/html5/bounceback/" class="game-frame" title="Play Bounce Back Online"></iframe>
+        </section>
+
+        <p class="game-credit">A JS13k 2019 Game By Frank Force</p>
+
+        <section class="game-info">
+            <h2>ABOUT THE GAME</h2>
+            <p>Bounce Back is a charming retro-style adventure where you navigate through vibrant pixel worlds. Collect items, avoid obstacles, and use special warps to progress through increasingly challenging levels. With its cute pixel graphics and simple controls, this game delivers a nostalgic gaming experience!</p>
+
+            <div class="controls">
+                <h2>HOW TO PLAY</h2>
+                <p>Use the WASD keys to navigate your character through the pixelated world — jump over gaps, dodge enemies, and explore hidden paths.<br><br>
+
+🌀 Click the left mouse button to throw your boomerang weapon. It spins forward and arcs back toward you — aim carefully!<br><br>
+
+🔄 Sometimes, you'll need to retrieve the boomerang before you can throw it again, so plan your attacks wisely.<br><br>
+
+🧡 Collect hearts to gain extra lives and survive tougher stages.<br><br>
+
+🌙 Gather glowing moons to unlock special powers that help you progress.<br><br>
+
+🚪 Watch for secret warp points to jump between levels.<br><br>
+
+⏸️ Press ESC or P at any time to pause the game and catch your breath.</p>
+            </div>
+
+        </section>
+
+        <button class="pixel-btn">START GAME</button>
+
+        <section class="features">
+            <div class="feature-card">
+                <h2>GAME FEATURES</h2>
+                <ul>
+                    <li>Colorful pixel art graphics</li>
+                    <li>Multiple challenging levels</li>
+                    <li>Special warp points and collectibles</li>
+                    <li>Retro game soundtrack</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card">
+                <h2>GAME TIPS</h2>
+                <p>Watch out for the warp points to find new areas! Always try to collect hearts to increase your lives. The game gets more challenging as you progress, so plan your moves carefully!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HOWTOPET.ME | BOUNCE BACK GAME | ORIGINAL GAME BY FRANK FORCE</p>
+    </footer>
+
+    <script>
+        document.querySelector('.pixel-btn').addEventListener('click', function() {
+            document.querySelector('.game-frame').focus();
+        });
+    </script>
+</body>
+</html>
