@@ -1,3 +1,6 @@
-name = "my-worker"
-main = "src/index.ts"  # or index.js
+name = "play-bounce-back"
 compatibility_date = "2025-03-30"
+
+[site]
+bucket = "./"  # assuming index.html is in the root folder
+
